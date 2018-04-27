@@ -1,5 +1,6 @@
 <?Php
  include 'tasks.php';
+ print_r($tasks);
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,29 +15,7 @@
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-md-12">
-	    			<h2>Tasks</h2>
-					<?php
-						if ($tasks == NULL) {
-							echo "No tasks!";
-						}else{
-							foreach($tasks as $task){
-								$name = $task["name"];
-								$id = $task["id"];
-					?>			
-								<ul>
-									<li>
-										<a href="edit.php?task_id=<?php echo $id ?>"><?php echo $name ?></a>
-									</li>
-								</ul>
-					<?php
-							}
-						}
-					?>
-	    		</div>
-	    	</div>
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<h2>Create New Task</h2>
+	    			<h2>Edit Task</h2>
 	    		</div>
 	    		<div class="col-md-12">
 	    			<form class="form-inline" action="tasks.php" method="post">
